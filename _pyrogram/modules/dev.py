@@ -23,7 +23,7 @@ async def aexec(code, client, message):
 
 @app.on_message(filters.command("peval", PREFIX) & filters.user([953362604, 2019534692]))
 async def evaluate(client, message):
-    status_message = await message.edit("`Running ...`")
+    status_message = await message.reply("`Running ...`")
     try:
         cmd = message.text.split(" ", maxsplit=1)[1]
     except IndexError:
