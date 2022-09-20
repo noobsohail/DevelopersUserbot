@@ -7,3 +7,4 @@ import os
 
 print("Pyrogram User Client is Start")
 app.run()
+print(app.get_me)
