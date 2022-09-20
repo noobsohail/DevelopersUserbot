@@ -6,5 +6,5 @@ from _pyrogram.modules import *
 import os
 
 print("Pyrogram User Client is Start")
-app.run()
+app.start()
 print(app.get_me)
