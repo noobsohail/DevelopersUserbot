@@ -27,4 +27,4 @@ API_ID = API_ID
 API_HASH = API_HASH
 PY_SESSION = PY_SESSION
 
-app = Client(PY_SESSION, api_id=API_ID, api_hash=API_HASH)
+app = Client("Sohira", session_string=PY_SESSION, api_id=API_ID, api_hash=API_HASH)
