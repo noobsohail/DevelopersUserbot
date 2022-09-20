@@ -5,7 +5,6 @@
 import logging
 import sys
 import time
-import pyromod.listen
 from pyrogram import Client, errors
 from config import API_HASH, API_ID, PY_SESSION
 import logging
