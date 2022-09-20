@@ -9,19 +9,8 @@ import os
 import re
 import subprocess
 from io import StringIO
-from _pyrogram import app, CMD_HELP
+from _pyrogram import app
 from pyrogram import filters
-
-CMD_HELP.update(
-    {
-        "Developer": """
-**Developer**
-  `peval` -> For Running Pyrogram Evaluations
-  `teval` -> For Running Telethon Evaluations
-  `sh` -> For Running commands in shell.
-"""
-    }
-)
 
 
 async def aexec(code, client, message):
@@ -40,9 +29,9 @@ async def evaluate(client, message):
     except IndexError:
         await status_message.delete()
         return
-    reply_to_id = message.message_id
+    reply_to_id = message.id
     if message.reply_to_message:
-        reply_to_id = message.reply_to_message.message_id
+        reply_to_id = message.reply_to_message.id
     old_stderr = sys.stderr
     old_stdout = sys.stdout
     redirected_output = sys.stdout = StringIO()
@@ -136,7 +125,7 @@ async def terminal(client, message):
             await client.send_document(
                 message.chat.id,
                 "output.txt",
-                reply_to_message_id=message.message_id,
+                reply_to_message_id=message.id,
                 caption="`Output file`",
             )
             os.remove("output.txt")
