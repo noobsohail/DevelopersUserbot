@@ -9,11 +9,10 @@ from pyrogram import Client, errors
 from config import API_HASH, API_ID, PY_SESSION
 import logging
 
-logging.basicConfig(
-    level=logging.DEBUG,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-
+logging.basicConfig(level=logging.INFO)
+#Comment
+LOGS = logging.getLogger("AnimeBot")
+LOGS.setLevel(level=logging.INFO)
 LOGGER = logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
