@@ -2,7 +2,7 @@
 # The Author (Jayant Kageri) just Ported this for Devloper Userbot
 # (C) 2021 Jayant Kageri
 
-from config import PREFIX
+from config import PREFIX, OWNER
 import traceback
 import sys
 import os
@@ -21,7 +21,7 @@ async def aexec(code, client, message):
     return await locals()["__aexec"](client, message)
 
 
-@app.on_message(filters.command("peval", PREFIX) & filters.user([953362604, 2019534692]))
+@app.on_message(filters.command("eval", PREFIX) & filters.user(OWNER))
 async def evaluate(client, message):
     status_message = await message.reply("`Running ...`")
     try:
